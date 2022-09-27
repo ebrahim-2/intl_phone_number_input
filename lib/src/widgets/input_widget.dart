@@ -76,6 +76,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
   final InputBorder? inputBorder;
   final InputDecoration? inputDecoration;
   final InputDecoration? searchBoxDecoration;
+  final BoxDecoration? containerDecoration;
   final Color? cursorColor;
   final TextAlign textAlign;
   final TextDirection textDirection;
@@ -126,7 +127,8 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       this.focusNode,
       this.cursorColor,
       this.autofillHints,
-      this.countries})
+      this.countries,
+      this.containerDecoration})
       : super(key: key);
 
   @override
@@ -393,6 +395,7 @@ class _InputWidgetView
     final dialCode = state.country?.dialCode ?? '';
 
     return Container(
+      decoration: widget.containerDecoration,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
